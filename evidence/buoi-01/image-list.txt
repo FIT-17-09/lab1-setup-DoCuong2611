@@ -1,0 +1,1 @@
+request returned 500 Internal Server Error for API route and version http://%2Fvar%2Frun%2Fdocker.sock/v1.52/images/json, check if the server supports the requested API version

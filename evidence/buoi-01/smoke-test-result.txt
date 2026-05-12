@@ -1,0 +1,72 @@
+== Tool checks ==
+[PASS] git installed
+[PASS] docker installed
+[PASS] node installed
+[PASS] python installed
+\n== Docker checks ==
+Docker version 29.1.3, build f52814d
+[PASS] docker CLI
+docker: unknown command: docker compose
+
+Run 'docker --help' for more information
+[FAIL] docker compose v2
+Client:
+ Version:    29.1.3
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  debug: Get a shell into any image or container (Docker Inc.)
+    Version:  0.0.45
+    Path:     /usr/local/lib/docker/cli-plugins/docker-debug
+  desktop: Docker Desktop commands (Docker Inc.)
+    Version:  v0.2.0
+    Path:     /usr/local/lib/docker/cli-plugins/docker-desktop
+  extension: Manages Docker extensions (Docker Inc.)
+    Version:  v0.2.31
+    Path:     /usr/local/lib/docker/cli-plugins/docker-extension
+  init: Creates Docker-related starter files for your project (Docker Inc.)
+    Version:  v1.4.0
+    Path:     /usr/local/lib/docker/cli-plugins/docker-init
+  model: Docker Model Runner (Docker Inc.)
+    Version:  v1.0.2
+    Path:     /usr/local/lib/docker/cli-plugins/docker-model
+  pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+    Version:  v0.0.21
+    Path:     /usr/local/lib/docker/cli-plugins/docker-pass
+  sandbox: Docker Sandbox (Docker Inc.)
+    Version:  v0.6.0
+    Path:     /usr/local/lib/docker/cli-plugins/docker-sandbox
+WARNING: Plugin "/usr/local/lib/docker/cli-plugins/docker-ai" is not valid: failed to fetch metadata: signal: bus error (core dumped)
+WARNING: Plugin "/usr/local/lib/docker/cli-plugins/docker-buildx" is not valid: failed to fetch metadata: signal: bus error (core dumped)
+WARNING: Plugin "/usr/local/lib/docker/cli-plugins/docker-compose" is not valid: failed to fetch metadata: signal: bus error (core dumped)
+WARNING: Plugin "/usr/local/lib/docker/cli-plugins/docker-mcp" is not valid: failed to fetch metadata: signal: bus error (core dumped)
+WARNING: Plugin "/usr/local/lib/docker/cli-plugins/docker-offload" is not valid: failed to fetch metadata: signal: bus error (core dumped)
+WARNING: Plugin "/usr/local/lib/docker/cli-plugins/docker-sbom" is not valid: failed to fetch metadata: exit status 4
+WARNING: Plugin "/usr/local/lib/docker/cli-plugins/docker-scout" is not valid: failed to fetch metadata: signal: bus error (core dumped)
+
+Server:
+ERROR: request returned 500 Internal Server Error for API route and version http://%2Fvar%2Frun%2Fdocker.sock/v1.52/info, check if the server supports the requested API version
+errors pretty printing info
+[FAIL] docker daemon ready
+request returned 500 Internal Server Error for API route and version http://%2Fvar%2Frun%2Fdocker.sock/_ping, check if the server supports the requested API version
+[FAIL] hello-world container
+\n== Image checks ==
+[WARN] missing image registry:2; run scripts/pull_all.sh
+[WARN] missing image python:3.11-slim; run scripts/pull_all.sh
+[WARN] missing image node:20-alpine; run scripts/pull_all.sh
+[WARN] missing image postgres:15-alpine; run scripts/pull_all.sh
+[WARN] missing image rabbitmq:3-management; run scripts/pull_all.sh
+[WARN] missing image eclipse-mosquitto:2; run scripts/pull_all.sh
+[WARN] missing image nginx:alpine; run scripts/pull_all.sh
+[WARN] missing image traefik:v3.1; run scripts/pull_all.sh
+[WARN] missing image prom/prometheus:v2.54.1; run scripts/pull_all.sh
+[WARN] missing image grafana/grafana:11.2.0; run scripts/pull_all.sh
+[WARN] missing image redis:7-alpine; run scripts/pull_all.sh
+[WARN] missing image swaggerapi/swagger-ui:v5.17.14; run scripts/pull_all.sh
+[WARN] missing image hello-world:latest; run scripts/pull_all.sh
+[WARN] missing image ultralytics/ultralytics:latest-cpu; run scripts/pull_all.sh
+\n== Ultralytics check ==
+[WARN] skip ultralytics check because image is missing
+\n== Compose mini-stack check ==
+[WARN] compose mini-stack could not start; maybe ports 8081/5000 are in use
+\nALL CHECKS FINISHED. Read evidence/buoi-01/smoke-test-result.txt for details.
